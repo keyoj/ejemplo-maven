@@ -42,7 +42,6 @@ pipeline{
                 }
             }
         }
-
         stage('run') {
             steps {
                 dir('/var/devops/ejemplo-maven') {
