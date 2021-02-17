@@ -36,7 +36,7 @@ pipeline{
         stage('SonarQube analysis') {
             steps{
                 script {
-                    withSonarQubeEnv('sonar-scanner') { // You can override the credential to be used
+                    withSonarQubeEnv('Sonarqube-server') { // You can override the credential to be used
                         sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                     }
                 }
