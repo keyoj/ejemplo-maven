@@ -41,6 +41,23 @@ pipeline{
                 }
             }
         }
-	
+        stage('run') {
+            steps {
+                dir('/var/devops/ejemplo-maven') {
+                    echo 'run step'
+                    sh "nohup bash mvnw spring-boot:run &"
+                }
+            }
+        }
+        stage('testing app') {
+            steps {
+                dir('/var/devops/ejemplo-maven') {
+                    sleep 15
+                    echo 'testing app step'
+                    sh "curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
+                }
+
+            }
+        }
     }
 }
