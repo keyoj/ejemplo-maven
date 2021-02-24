@@ -5,6 +5,7 @@ pipeline{
             steps {
                 dir('/var/devops/ejemplo-maven') {
                     sh 'pwd'
+                    sh 'java -version'
                 }
             }
         }
